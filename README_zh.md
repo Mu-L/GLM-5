@@ -94,7 +94,7 @@ GLM-5 专为复杂系统工程和长周期智能体任务而设计。在我们�
 - [TokenSpeed](https://github.com/lightseekorg/tokenspeed) — 参见 [此处](https://lightseek.org/tokenspeed/recipes/models#glm-5-3-flash)
 - [Transformers](https://github.com/huggingface/transformers) — 参见 [transformers docs](https://github.com/huggingface/transformers/blob/main/docs/source/en/model_doc/glm5_next.md)
 - [KTransformers](https://github.com/kvcache-ai/ktransformers) — 参见 [tutorial](https://github.com/kvcache-ai/ktransformers/blob/main/doc/en/kt-kernel/GLM-5.3-Flash-Tutorial.md)
-- [Unsloth](https://github.com/unslothai/unsloth) — 参见 [guide](https://unsloth.ai/docs/models/glm-5.3-flash)
+- [Unsloth](https://github.com/unslothai/unsloth) — 参见 [guide](https://unsloth.ai/docs/models/glm-5.3)
 
 ### GLM-5.3 及更早的 GLM-5 系列模型
 
