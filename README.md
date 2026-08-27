@@ -15,9 +15,15 @@
 
 ## Introduction
 
-### GLM-5.3-Flash
+### GLM-5.3 & GLM-5.3-Flash
 
-We introduce GLM-5.3-Flash, the first natively multimodal model in the GLM-5 series. With 320B total parameters and just 18B active parameters, it outperforms GLM-5.2 across benchmarks and real-world workloads at one-tenth the price, while approaching Claude Opus 4.8 on coding and agentic benchmarks.
+GLM-5.3 uses the same base model as GLM-5.2 — every gain comes from post-training. Compared with GLM-5.2, it is much better at complex coding and long-horizon tasks:
+
++ Stronger Coding: GLM-5.3 is the most capable open-weights model for coding, with a 50% improvement over GLM-5.2 on our in-house Z.ai Code Bench. It also achieve open-source SOTA on public benchmarks including Terminal Bench 3.0 and
+  Agents' Last Exam.
++ Emergent Cyber Capability: As we scaled post-training, cyber capability developed faster than we expected. GLM-5.3 is state of the art on CyberGym for vulnerability discovery, and its gains are largest further up the exploitation chain, where it more than doubles GLM-5.2 on exploitation benchmarks.
+
+![bench_53_2](resources/bench_53_2.png)
 
 GLM-5.3-Flash starts from a newly trained base model, with its architecture and training recipe redesigned around capability and efficiency. For the first time in the GLM series, we introduce a hybrid architecture combining sparse and linear attention, sharply reducing long-context serving costs while preserving precise long-context capabilities. The model also adopts Manifold-Constrained Hyper-Connections (mHC) to further improve scaling efficiency. Together with our latest 30T-token multimodal pre-training corpus, these changes enable GLM-5.3-Flash to deliver more intelligence with less compute.
 
@@ -66,16 +72,18 @@ On [Vending Bench 2](https://andonlabs.com/evals/vending-bench-2), a benchmark t
 
 ## Download Model
 
-| Model              | Download Links                                                                                                                               | Model Size | Precision |
-|--------------------|----------------------------------------------------------------------------------------------------------------------------------------------|------------|-----------|
-| GLM-5.3-Flash      | [🤗 Hugging Face](https://huggingface.co/zai-org/GLM-5.3-Flash)<br> [🤖 ModelScope](https://modelscope.cn/models/ZhipuAI/GLM-5.3-Flash)      | 320B-A18B  | FP8       |
+| Model              | Download Links                                                                                                                                    | Model Size | Precision |
+|--------------------|---------------------------------------------------------------------------------------------------------------------------------------------------|------------|-----------|
+| GLM-5.3            | [🤗 Hugging Face](https://huggingface.co/zai-org/GLM-5.3)<br> [🤖 ModelScope](https://modelscope.cn/models/ZhipuAI/GLM-5.3)                       | 744B-A40B  | FP8       |
+| GLM-5.3-BF16       | [🤗 Hugging Face](https://huggingface.co/zai-org/GLM-5.3-BF16)<br> [🤖 ModelScope](https://modelscope.cn/models/ZhipuAI/GLM-5.3-BF16)             | 744B-A40B  | BF16      |
+| GLM-5.3-Flash      | [🤗 Hugging Face](https://huggingface.co/zai-org/GLM-5.3-Flash)<br> [🤖 ModelScope](https://modelscope.cn/models/ZhipuAI/GLM-5.3-Flash)           | 320B-A18B  | FP8       |
 | GLM-5.3-Flash-BF16 | [🤗 Hugging Face](https://huggingface.co/zai-org/GLM-5.3-Flash-BF16)<br> [🤖 ModelScope](https://modelscope.cn/models/ZhipuAI/GLM-5.3-Flash-BF16) | 320B-A18B  | BF16      |
-| GLM-5.2            | [🤗 Hugging Face](https://huggingface.co/zai-org/GLM-5.2)<br> [🤖 ModelScope](https://modelscope.cn/models/ZhipuAI/GLM-5.2)                  | 744B-A40B  | BF16      |
-| GLM-5.2-FP8        | [🤗 Hugging Face](https://huggingface.co/zai-org/GLM-5.2-FP8)<br> [🤖 ModelScope](https://modelscope.cn/models/ZhipuAI/GLM-5.2-FP8)          | 744B-A40B  | FP8       |
-| GLM-5.1            | [🤗 Hugging Face](https://huggingface.co/zai-org/GLM-5.1)<br> [🤖 ModelScope](https://modelscope.cn/models/ZhipuAI/GLM-5.1)                  | 744B-A40B  | BF16      |
-| GLM-5.1-FP8        | [🤗 Hugging Face](https://huggingface.co/zai-org/GLM-5.1-FP8)<br> [🤖 ModelScope](https://modelscope.cn/models/ZhipuAI/GLM-5.1-FP8)          | 744B-A40B  | FP8       |
-| GLM-5              | [🤗 Hugging Face](https://huggingface.co/zai-org/GLM-5)<br> [🤖 ModelScope](https://modelscope.cn/models/ZhipuAI/GLM-5)                      | 744B-A40B  | BF16      |
-| GLM-5-FP8          | [🤗 Hugging Face](https://huggingface.co/zai-org/GLM-5-FP8)<br> [🤖 ModelScope](https://modelscope.cn/models/ZhipuAI/GLM-5-FP8)              | 744B-A40B  | FP8       |
+| GLM-5.2            | [🤗 Hugging Face](https://huggingface.co/zai-org/GLM-5.2)<br> [🤖 ModelScope](https://modelscope.cn/models/ZhipuAI/GLM-5.2)                       | 744B-A40B  | BF16      |
+| GLM-5.2-FP8        | [🤗 Hugging Face](https://huggingface.co/zai-org/GLM-5.2-FP8)<br> [🤖 ModelScope](https://modelscope.cn/models/ZhipuAI/GLM-5.2-FP8)               | 744B-A40B  | FP8       |
+| GLM-5.1            | [🤗 Hugging Face](https://huggingface.co/zai-org/GLM-5.1)<br> [🤖 ModelScope](https://modelscope.cn/models/ZhipuAI/GLM-5.1)                       | 744B-A40B  | BF16      |
+| GLM-5.1-FP8        | [🤗 Hugging Face](https://huggingface.co/zai-org/GLM-5.1-FP8)<br> [🤖 ModelScope](https://modelscope.cn/models/ZhipuAI/GLM-5.1-FP8)               | 744B-A40B  | FP8       |
+| GLM-5              | [🤗 Hugging Face](https://huggingface.co/zai-org/GLM-5)<br> [🤖 ModelScope](https://modelscope.cn/models/ZhipuAI/GLM-5)                           | 744B-A40B  | BF16      |
+| GLM-5-FP8          | [🤗 Hugging Face](https://huggingface.co/zai-org/GLM-5-FP8)<br> [🤖 ModelScope](https://modelscope.cn/models/ZhipuAI/GLM-5-FP8)                   | 744B-A40B  | FP8       |
 
 ## Serve GLM-5 Series Models Locally
 
@@ -84,18 +92,25 @@ On [Vending Bench 2](https://andonlabs.com/evals/vending-bench-2), a benchmark t
 - [SGLang](https://github.com/sgl-project/sglang) — see [cookbook](https://cookbook.sglang.io/autoregressive/GLM/GLM-5.3-Flash)
 - [vLLM](https://github.com/vllm-project/vllm) — see [recipes](https://recipes.vllm.ai/zai-org/GLM-5.3-Flash)
 - [TokenSpeed](https://github.com/lightseekorg/tokenspeed) — see [here](https://lightseek.org/tokenspeed/recipes/models#glm-5-3-flash)
+- [Transformers](https://github.com/huggingface/transformers) — see [transformers docs](https://github.com/huggingface/transformers/blob/main/docs/source/en/model_doc/glm5_next.md)
 - [KTransformers](https://github.com/kvcache-ai/ktransformers) — see [tutorial](https://github.com/kvcache-ai/ktransformers/blob/main/doc/en/kt-kernel/GLM-5.3-Flash-Tutorial.md)
+- [Unsloth](https://github.com/unslothai/unsloth) — see [guide](https://unsloth.ai/docs/models/glm-5.3)
 
-### Other GLM-5 Family
+### GLM-5.3 and Earlier GLM-5 Models
 
-- [SGLang](https://github.com/sgl-project/sglang)  — see [cookbook](https://cookbook.sglang.io/autoregressive/GLM/GLM-5.2)
-- [vLLM](https://github.com/vllm-project/vllm) — see [recipes](https://recipes.vllm.ai/zai-org/GLM-5.2)
+- [SGLang](https://github.com/sgl-project/sglang)  — see [cookbook](https://cookbook.sglang.io/autoregressive/GLM/GLM-5.3)
+- [vLLM](https://github.com/vllm-project/vllm) — see [recipes](https://recipes.vllm.ai/zai-org/GLM-5.3)
 - [Transformers](https://github.com/huggingface/transformers) — see [transformers docs](https://github.com/huggingface/transformers/blob/main/docs/source/en/model_doc/glm_moe_dsa.md)
 - [KTransformers](https://github.com/kvcache-ai/ktransformers) — see [tutorial](https://github.com/kvcache-ai/ktransformers/blob/main/doc/en/kt-kernel/GLM-5.2-Tutorial.md)
 - [Unsloth](https://github.com/unslothai/unsloth) — see [guide](https://unsloth.ai/docs/models/glm-5.2)
 - For deployment on the `Ascend NPU` platform, inference frameworks such as vLLM-Ascend, xLLM and SGLang are supported — see [here](example/ascend.md).
 
-GLM-5 supports controlling the thinking budget through the `reasoning_effort` parameter, which accepts two levels: `max` and `high`. **`max` is the default** — if `reasoning_effort` is left unset (or set to any value other than `high`), the model runs at `Max`. To use the `High` level, you must explicitly pass `reasoning_effort="high"`. For default scenarios such as benchmark/leaderboard reproduction, keep `Max` (no setting required); only set `reasoning_effort="high"` when you specifically want the `High` level. Thinking can be turned off entirely by setting `enable_thinking=false`.
+
+### Note
+
+- **GLM-5.2** accept only `high` and `max` for `reasoning_effort`, with the same `max` default and the same fallback behavior.
+- **GLM-5.3 and GLM-5.3-Flash** supports controlling the thinking budget through the `reasoning_effort` parameter, which accepts three levels: `low`, `high`, and `max`. It defaults to `max` if not passed (or if set to any other value). To use `low` or `high`, pass them explicitly. For benchmark and leaderboard reproduction, keep the default `max`.
+- In the chat template for GLM-5.3 and GLM-5.3-Flash, `clear_thinking` defaults to `false` if not passed. For chat scenarios, explicitly pass `clear_thinking=true`.
 
 ## Fine-tuning GLM-5 Series Models
 
